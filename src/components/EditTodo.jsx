@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 const EditTodo = ({
-  items,
-  setItems,
+  todos,
+  setTodos,
   setIsEdit,
   updateItem,
   setUpdateItem,
@@ -14,8 +14,8 @@ const EditTodo = ({
     if (!editInput || /^\s*$/.test(editInput)) {
       return
     }
-    setItems(
-      items.map((item) => {
+    setTodos(
+      todos.map((item) => {
         if (item.id === updateItem.id) {
           return { ...item, title: editInput }
         }
