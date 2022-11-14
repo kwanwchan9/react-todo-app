@@ -7,14 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const App = () => {
-  const initialState = JSON.parse(localStorage.getItem('todo-items')) || []
+  const initialState = JSON.parse(localStorage.getItem('todo-items') || [])
 
   const [input, setInput] = useState('')
-  const [items, setItems] = useState(initialState) // items = [{ id: '', title: '', isComplete: false]
+  const [todos, setTodos] = useState(initialState) // items = [{ id: '', title: '', isComplete: false]
 
   useEffect(() => {
-    localStorage.setItem('todo-items', JSON.stringify(items))
-  }, [items])
+    localStorage.setItem('todo-items', JSON.stringify(todos))
+  }, [todos])
   return (
     <>
       <div className='container d-flex justify-content-center vh-100 vw-100'>
@@ -23,10 +23,10 @@ const App = () => {
           <Form
             input={input}
             setInput={setInput}
-            items={items}
-            setItems={setItems}
+            todos={todos}
+            setTodos={setTodos}
           />
-          <TodoList items={items} setItems={setItems} />
+          <TodoList todos={todos} setTodos={setTodos} />
         </div>
       </div>
     </>

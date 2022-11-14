@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Form = ({ input, setInput, items, setItems }) => {
+const Form = ({ input, setInput, todos, setTodos }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -9,8 +9,8 @@ const Form = ({ input, setInput, items, setItems }) => {
       return
     }
 
-    setItems([
-      ...items,
+    setTodos([
+      ...todos,
       {
         id: Math.floor(Math.random() * 1000000),
         title: input.trim(),

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TodoItems from './TodoItems'
 import EditTodo from './EditTodo'
 
-const TodoList = ({ items, setItems }) => {
+const TodoList = ({ todos, setTodos }) => {
   const [isEdit, setIsEdit] = useState(false)
   const [updateItem, setUpdateItem] = useState(null)
 
@@ -10,16 +10,16 @@ const TodoList = ({ items, setItems }) => {
     <>
       {isEdit ? (
         <EditTodo
-          items={items}
-          setItems={setItems}
+          todos={todos}
+          setTodos={setTodos}
           setIsEdit={setIsEdit}
           updateItem={updateItem}
           setUpdateItem={setUpdateItem}
         />
       ) : (
         <TodoItems
-          items={items}
-          setItems={setItems}
+          todos={todos}
+          setTodos={setTodos}
           setIsEdit={setIsEdit}
           setUpdateItem={setUpdateItem}
         />

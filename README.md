@@ -16,5 +16,5 @@ Outlook:
 Function for Strikethrogh, Update and Delete:
 ![Demo_Img_2](/image/screenshot2.png)
 
-Edit React Page:
+Edit Todo Page:
 ![Demo_Img_3](/image/screenshot3.png)

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
-const TodoItems = ({ items, setItems, setIsEdit, setUpdateItem }) => {
+const TodoItems = ({ todos, setTodos, setIsEdit, setUpdateItem }) => {
   const [isComplete, setIsComplete] = useState(false)
 
   const handleComplete = (id) => {
-    setItems(
-      items.map((item) => {
+    setTodos(
+      todos.map((item) => {
         if (item.id == id) {
           return { ...item, isComplete: !item.isComplete }
         }
@@ -15,28 +15,28 @@ const TodoItems = ({ items, setItems, setIsEdit, setUpdateItem }) => {
   }
 
   const handleEdit = (id) => {
-    const findTodo = items.find((item) => item.id === id)
+    const findTodo = todos.find((item) => item.id === id)
     setUpdateItem(findTodo)
     setIsEdit(true)
   }
 
   const handleDelete = (id) => {
-    setItems(
-      items.filter((item) => {
+    setTodos(
+      todos.filter((item) => {
         return item.id !== id
       })
     )
   }
 
   const handleEmpty = () => {
-    setItems([])
+    setTodos([])
   }
 
   return (
     <>
       <div className='mt-4'>
         <ul className='list-group'>
-          {items.map(({ id, title, isComplete }) => {
+          {todos.map(({ id, title, isComplete }) => {
             return (
               <li className='input-group mb-3' key={id}>
                 <button
