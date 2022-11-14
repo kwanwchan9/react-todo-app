@@ -16,7 +16,7 @@ const EditTodo = ({
     }
     setItems(
       items.map((item) => {
-        if (item.id == updateItem.id) {
+        if (item.id === updateItem.id) {
           return { ...item, title: editInput }
         }
         return item

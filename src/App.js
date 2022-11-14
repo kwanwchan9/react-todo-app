@@ -7,8 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const App = () => {
-  const initialState = JSON.parse(localStorage.getItem('todo-items') || [])
-
+  let initialState = []
+  if (localStorage.getItem('todo-items')) {
+    initialState = JSON.parse(localStorage.getItem('todo-items'))
+  }
   const [input, setInput] = useState('')
   const [todos, setTodos] = useState(initialState) // items = [{ id: '', title: '', isComplete: false]
 

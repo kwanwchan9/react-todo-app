@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 const TodoItems = ({ todos, setTodos, setIsEdit, setUpdateItem }) => {
-  const [isComplete, setIsComplete] = useState(false)
-
   const handleComplete = (id) => {
     setTodos(
       todos.map((item) => {
