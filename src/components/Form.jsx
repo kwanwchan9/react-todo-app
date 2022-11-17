@@ -23,6 +23,7 @@ const Form = ({ input, setInput, todos, setTodos }) => {
     <>
       <form className='d-flex mt-2' onSubmit={handleSubmit}>
         <input
+          autoFocus
           type='text'
           size={25}
           placeholder=' + New task...'
