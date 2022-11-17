@@ -47,7 +47,7 @@ const TodoItems = ({ todos, setTodos, setIsEdit, setUpdateItem }) => {
                         ? 'bi bi-check-circle-fill'
                         : 'bi bi-check-circle'
                     }
-                  ></i>
+                  />
                 </button>
                 <input
                   className={
@@ -65,13 +65,13 @@ const TodoItems = ({ todos, setTodos, setIsEdit, setUpdateItem }) => {
                   className='input-group-text'
                   onClick={() => handleEdit(id)}
                 >
-                  <i className='bi bi-pencil-square'></i>
+                  <i className='bi bi-pencil-square' />
                 </button>
                 <button
                   className='input-group-text'
                   onClick={() => handleDelete(id)}
                 >
-                  <i className='bi bi-trash'></i>
+                  <i className='bi bi-trash' />
                 </button>
               </li>
             )

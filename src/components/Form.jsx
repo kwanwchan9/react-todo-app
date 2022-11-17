@@ -5,14 +5,13 @@ const Form = ({ input, setInput, todos, setTodos }) => {
     e.preventDefault()
 
     if (!input || /^\s*$/.test(input)) {
-      setInput('')
-      return
+      return setInput('')
     }
 
     setTodos([
       ...todos,
       {
-        id: Math.floor(Math.random() * 1000000),
+        id: Math.floor(Math.random() * 1000000000),
         title: input.trim(),
         isComplete: false,
       },

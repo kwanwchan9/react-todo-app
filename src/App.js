@@ -7,12 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const App = () => {
-  let initialState = []
-  if (localStorage.getItem('todo-items')) {
-    initialState = JSON.parse(localStorage.getItem('todo-items'))
-  }
+  // let initialState = []
+  // if (localStorage.getItem('todo-items')) {
+  //   initialState = JSON.parse(localStorage.getItem('todo-items'))
+  // }
+
   const [input, setInput] = useState('')
-  const [todos, setTodos] = useState(initialState) // items = [{ id: '', title: '', isComplete: false]
+  const [todos, setTodos] = useState(
+    localStorage.getItem('todo-items')
+      ? JSON.parse(localStorage.getItem('todo-items'))
+      : []
+  )
+  // items = [{ id: '', title: '', isComplete: false]
 
   useEffect(() => {
     localStorage.setItem('todo-items', JSON.stringify(todos))
